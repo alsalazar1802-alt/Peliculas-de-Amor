@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas Románticas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: pink;
+      color: #a12d2d;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: background-color 0.2s, transform 0.2s;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .menu-btn:hover {
+      background-color: #f8f8f8;
+      transform: scale(1.1);
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 250px;
+      height: 100%;
+      background-color: #a12d2d;
+      color: white;
+      padding-top: 60px;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: left 0.4s ease, opacity 0.4s ease;
+      z-index: 999;
+    }
+
+    .menu.open {
+      left: 0;
+      opacity: 1;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 21px;
+      right: 15px;
+      background-color: #fff;
+      color: #a12d2d;
+      border: none;
+      border-radius: 8px;
+      font-size: 20px;
+      padding: 4px 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .close-btn:hover {
+      background-color: #f8f8f8;
+      transform: scale(1.1);
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #831f1f;
+    }
+
+    #video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    @font-face {
+      font-family: 'valentin';
+      src: url('fonts/valentin.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'martin';
+      src: url('fonts/martin.otf') format('truetype');
+    }
+
+    h1 {
+      font-size: 7em;
+      margin-bottom: 0em;
+      font-family: 'valentin';
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      font-family: 'martin';
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+    }
+
+    .option {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 1.5em 2.5em;
+      text-decoration: none;
+      color: #a12d2d;
+      font-weight: bold;
+      font-size: 1em;
+      font-family: 'martin';
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .option:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
+      .option { font-size: 1em; padding: 1em 1.8em; }
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <div class="menu" id="sideMenu">
+    <button class="close-btn" onclick="toggleMenu()">✖</button>
+    <h2 style="margin-left: 5px;">Menú</h2>
+    <a href="peliculas.html">Películas</a>
+    <a href="favoritos.html">Mis Favoritos</a>
+  </div>
+  <video id="video-fondo" autoplay muted loop>
+    <source src="videof.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+
+  <audio id="musica" autoplay loop>
+    <source src="audiof.mpeg" type="audio/mpeg">
+  </audio>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('open');
+    }
+    const musica = document.getElementById("musica");
+    document.addEventListener("click", () => {
+      musica.play().catch(() => {});
+    });
+  </script>
+
+  <h1>Películas Románticas</h1>
+  <p>¿Qué querés ver hoy?</p>
+
+  <div class="options">
+    <a href="clasicas.html" class="option">Clásicos del Romance</a>
+    <a href="comedias.html" class="option">Comedias Romanticas</a>
+    <a href="llorar.html" class="option">Dramas Romanticos</a>
+    <a href="modernas.html" class="option">Romances Modernos</a>
+  </div>
+</body>
+</html>

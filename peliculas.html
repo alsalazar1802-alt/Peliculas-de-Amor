@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Películas Romanticas</title>
+    <style>
+      body {
+        font-family: 'Georgia', serif;
+        background:pink;
+        margin: 0;
+        padding: 10px 20px;
+        text-align: center;
+        color: #6b1c1c;
+      }
+
+      @font-face {
+        font-family: 'valentin';
+        src: url('fonts/valentin.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'martin';
+        src: url('fonts/martin.otf') format('truetype');
+      }
+
+      h1 {
+        font-size: 90px;
+        color: #b02e2e;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        font-family: 'valentin';
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 10px;
+        color: #6b1c1c;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        font-family: 'martin';
+      }
+
+      a:hover {
+        color: #b02e2e;
+      }
+
+      .boton-centro {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+      }
+
+      .volver {
+        font-size: 15px;
+        background-color: #f9d5d5;
+        padding: 8px 18px;
+        border-radius: 25px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        border: none;
+        tex-decoration: none;
+        color: #6b1c1c;
+      }
+
+      .galeria {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 35px;
+        padding: 20px;
+      }
+
+      .peli {
+        background-color: #fff0f5;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .peli:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+      }
+
+      .peli img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .nombre {
+        padding: 10px;
+        font-weight: bold;
+        color: #a12d2d;
+        font-size: 18px;
+        font-family: 'martin';
+      }
+
+      .barra-busqueda {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        color: white;
+        padding: 10px 20px;
+        font-family: 'Georgia', serif;
+        border-bottom: 2px solid #7e1e1e;
+      }
+
+      .barra-busqueda h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+
+      .busqueda-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      #buscador {
+        width: 0;
+        opacity: 0;
+        padding: 6px;
+        border: none;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .lupa {
+        font-size: 22px;
+        cursor: pointer;
+        margin-left: 10px;
+        transition: transform 0.2s ease;
+      }
+
+      .lupa:hover {
+        transform: scale(1.2);
+      }
+
+      .busqueda-container.active #buscador {
+        width: 200px;
+        opacity: 1;
+      }
+
+      .barra-busqueda h2{
+        font-size: 20px;
+        font-weight: bold;
+        color: #a12d2d;
+        margin: 0;
+        font-family: 'martin';
+      }
+    </style>
+  </head>
+  <body>
+    <header class="barra-busqueda">
+      <h2>Busca tu pelicula</h2>
+      <div class="boton-centro">
+        <a href="index.html" class="volver">Volver al inicio</a>
+      </div>
+      <div class="busqueda-container">
+        <input type="text" id="buscador" placeholder="Buscar película...">
+        <span class="lupa">🔍</span>
+      </div>
+    </header>
+    <script>
+      const lupa = document.querySelector('.lupa');
+      const contenedor = document.querySelector('.busqueda-container');
+      const buscador = document.getElementById('buscador');
+
+      lupa.addEventListener('click', () => {
+        contenedor.classList.toggle('active');
+        buscador.focus();
+      });
+
+      buscador.addEventListener('input', () => {
+        const filtro = buscador.value.toLowerCase();
+        const peliculas = document.querySelectorAll('.peli');
+
+        peliculas.forEach(peli => {
+          const nombre = peli.querySelector('.nombre').textContent.toLowerCase();
+          peli.style.display = nombre.includes(filtro) ? 'block' : 'none';
+        });
+      });
+      </script>
+    <div class="galeria">
+      <div class="peli">
+        <a href="titanic.html">
+          <img src="img/tn.jpg" alt="Titanic">
+        </a>
+        <div class="nombre">Titanic</div>
+      </div>
+      <div class="peli">
+        <a href="dia.html">
+          <img src="img/semd.jpg" alt="Siempre el mismo día">
+        </a>
+        <div class="nombre">Siempre el mismo día</div>
+      </div>
+      <div class="peli">
+        <a href="perder.html">
+          <img src="img/cpaucedd.jpg" alt="Cómo perder a un hombre en 10 días">
+        </a>
+        <div class="nombre">Cómo perder a un hombre en 10 días</div>
+      </div>
+      <div class="peli">
+        <a href="mujer.html">
+          <img src="img/mb.jpg" alt="Mujer Bonita">
+        </a>
+        <div class="nombre">Mujer Bonita</div>
+      </div>
+      <div class="peli">
+        <a href="vestidos.html">
+          <img src="img/27v.jpg" alt="27 Vestidos">
+        </a>
+        <div class="nombre">27 Vestidos</div>
+      </div>
+      <div class="peli">
+        <a href="notting.html">
+          <img src="img/ullnh.jpg" alt="Un Lugar Llamado Notting Hill">
+        </a>
+        <div class="nombre">Un Lugar Llamado Notting Hill</div>
+      </div>
+      <div class="peli">
+        <a href="resplandor.html">
+          <img src="img/er.jpg" alt="Eterno resplandor de una mente sin recuerdos">
+        </a>
+        <div class="nombre">Eterno resplandor de una mente sin recuerdos</div>
+      </div>
+      <div class="peli">
+        <a href="orgullo.html">
+          <img src="img/oyp.jpg" alt="Orgullo y Prejuicio">
+        </a>
+        <div class="nombre">Orgullo y Prejuicio</div>
+      </div>
+      <div class="peli">
+        <a href="diario.html">
+          <img src="img/ddup.jpg" alt="Diario de una pasión">
+        </a>
+        <div class="nombre">Diario de una pasión</div>
+      </div>
+      <div class="peli">
+        <a href="amores.html">
+          <img src="img/aeyub.jpg" alt="Amores, enredos y una boda">
+        </a>
+        <div class="nombre">Amores, enredos y una boda</div>
+      </div>
+    </div>
+  <div class="galeria">
+      <div class="peli">
+        <a href="primer.html">
+          <img src="img/mpa.jpg" alt="Mi primer amor">
+        </a>
+        <div class="nombre">Mi primer amor</div>
+      </div>
+      <div class="peli">
+        <a href="invisible.html">
+          <img src="img/lvdsi.jpg" alt="Las ventajas de ser invisible">
+        </a>
+        <div class="nombre">Las ventajas de ser invisible</div>
+      </div>
+      <div class="peli">
+        <a href="todos.html">
+          <img src="img/atlcdlqme.jpg" alt="A todos los chicos de los que me enamore">
+        </a>
+        <div class="nombre">A todos los chicos de los que me enamore</div>
+      </div>
+      <div class="peli">
+        <a href="cielo.html">
+          <img src="img/atmsec.jpg" alt="Tres metros sobre el cielo">
+        </a>
+        <div class="nombre">Tres metros sobre el cielo</div>
+      </div>
+      <div class="peli">
+        <a href="verano.html">
+          <img src="img/ddv.jpg" alt="500 días con ella">
+        </a>
+        <div class="nombre">500 días con ella</div>
+      </div>
+    </div>
+    <div class="galeria">
+      <div class="peli">
+        <a href="estadistica.html">
+          <img src="img/lpedapv.jpg" alt="La probabilidad estadistica del amor a primera vista">
+        </a>
+        <div class="nombre">La probabilidad estadistica del amor a primera vista</div>
+      </div>
+      <div class="peli">
+        <a href="idea.html">
+          <img src="img/lidt.jpg" alt="La idea de ti">
+        </a>
+        <div class="nombre">La idea de ti</div>
+      </div>
+      <div class="peli">
+        <a href="lalaland.html">
+          <img src="img/lll.jpg" alt="La La Land">
+        </a>
+        <div class="nombre">La La Land</div>
+      </div>
+      <div class="peli">
+        <a href="cuestion.html">
+          <img src="img/ucdt.jpg" alt="Una cuestion de tiempo">
+        </a>
+        <div class="nombre">Una cuestion de tiempo</div>
+      </div>
+      <div class="peli">
+        <a href="vayas.html">
+          <img src="img/adqtv.jpg" alt="Antes de que te vayas">
+        </a>
+        <div class="nombre">Antes de que te vayas</div>
+      </div>
+    </div>
+  <div class="galeria">
+      <div class="peli">
+        <a href="techo.html">
+          <img src="img/bemt.jpg" alt="Bajo el mismo techo">
+        </a>
+        <div class="nombre">Bajo el mismo techo</div>
+      </div>
+      <div class="peli">
+        <a href="vegas.html">
+          <img src="img/ldaelv.jpg" alt="Locura de amor en Las Vegas">
+        </a>
+        <div class="nombre">Locura de amor en Las Vegas</div>
+      </div>
+      <div class="peli">
+        <a href="propuesta.html">
+          <img src="img/lp.jpg" alt="La propuesta">
+        </a>
+        <div class="nombre">La propuesta</div>
+      </div>
+      <div class="peli">
+        <a href="monte.html">
+          <img src="img/mc.jpg" alt="Monte Carlo">
+        </a>
+        <div class="nombre">Monte Carlo</div>
+      </div>
+      <div class="peli">
+        <a href="novia.html">
+          <img src="img/qraln.jpg" alt="Quiero robarme a la novia">
+        </a>
+        <div class="nombre">Quiero robarme a la novia</div>
+      </div>
+    </div>
+    <div class="galeria">
+      <div class="peli">
+        <a href="primeravez.html">
+          <img src="img/csflpv.jpg" alt="Como si fuera la primera vez">
+        </a>
+        <div class="nombre">Como si fuera la primera vez</div>
+      </div>
+      <div class="peli">
+        <a href="bisiesto.html">
+          <img src="img/pdab.jpg" alt="Propuesta de Año Bisiesto">
+        </a>
+        <div class="nombre">Propuesta de Año Bisiesto</div>
+      </div>
+      <div class="peli">
+        <a href="princesa.html">
+          <img src="img/ddlp.jpg" alt="Diario de la princesa 2">
+        </a>
+        <div class="nombre">Diario de la princesa 2</div>
+      </div>
+      <div class="peli">
+        <a href="descanso.html">
+          <img src="img/ed.jpg" alt="El descanso">
+        </a>
+        <div class="nombre">El descanso</div>
+      </div>
+      <div class="peli">
+        <a href="contigo.html">
+          <img src="img/ctmc.jpg" alt="Con todos menos contigo">
+        </a>
+        <div class="nombre">Con todos menos contigo</div>
+      </div>
+    </div>
+  <div class="galeria">
+      <div class="peli">
+        <a href="recuerdame.html">
+          <img src="img/rc.jpg" alt="Recuerdame">
+        </a>
+        <div class="nombre">Recuerdame</div>
+      </div>
+      <div class="peli">
+        <a href="paseo.html">
+          <img src="img/uppr.jpg" alt="Un paseo para recordar">
+        </a>
+        <div class="nombre">Un paseo para recordar</div>
+      </div>
+      <div class="peli">
+        <a href="violet.html">
+          <img src="img/vyf.jpg" alt="Violet y Finch">
+        </a>
+        <div class="nombre">Violet y Finch</div>
+      </div>
+      <div class="peli">
+        <a href="medianoche.html">
+          <img src="img/adm.jpg" alt="Amor de media noche">
+        </a>
+        <div class="nombre">Amor de media noche</div>
+      </div>
+      <div class="peli">
+        <a href="masalla.html">
+          <img src="img/madc.jpg" alt="Mas alla del cielo">
+        </a>
+        <div class="nombre">Mas alla del cielo</div>
+      </div>
+    </div>
+    <div class="galeria">
+      <div class="peli">
+        <a href="dosmetros.html">
+          <img src="img/admdt.jpg" alt="A dos metros de ti">
+        </a>
+        <div class="nombre">A dos metros de ti</div>
+      </div>
+      <div class="peli">
+        <a href="vida.html">
+          <img src="img/ptlv.jpg" alt="Para toda la vida">
+        </a>
+        <div class="nombre">Para toda la vida</div>
+      </div>
+      <div class="peli">
+        <a href="nacidoe.html">
+          <img src="img/hnue.jpg" alt="Nace una estrella">
+        </a>
+        <div class="nombre">Nace una estrella</div>
+      </div>
+      <div class="peli">
+        <a href="antesdeti.html">
+          <img src="img/yadt.jpg" alt="Yo antes de ti">
+        </a>
+        <div class="nombre">Yo antes de ti</div>
+      </div>
+      <div class="peli">
+        <a href="estrella.html">
+          <img src="img/blme.jpg" alt="Bajo la misma estrella">
+        </a>
+        <div class="nombre">Bajo la misma estrella</div>
+      </div>
+    </div>
+  </body>
+</html>

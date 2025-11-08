@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Más Allá del Cielo</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background: pink;
+      color: var(--text);
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .movie-card {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .poster {
+      flex: 0 0 320px;
+      max-width: 40%;
+    }
+
+    .poster img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      object-fit: cover;
+    }
+
+    .details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #a12d2d;
+      margin: 0;
+    }
+
+    .meta {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+      color: #6b3a3a;
+      font-weight: 600;
+    }
+
+    .synopsis {
+      font-size: 15px;
+      line-height: 1.5;
+      color: black;
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-trailer {
+      background: transparent;
+      color: black;
+      border: 2px solid #a12d2d;
+    }
+
+    .btn-watch {
+      background: transparent;
+      color: black;
+      border: 2px solid #a12d2d;
+    }
+
+    .btn-inicio {
+      background: transparent;
+      color: black;
+      border: 2px solid #a12d2d;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 20px;
+      }
+      .movie-card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .poster {
+        max-width: 100%;
+      }
+      .title {
+        font-size: 22px;
+      }
+    }
+
+    .estrellas {
+      direction: rtl;
+      display: inline-flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .estrellas input {
+      display: none;
+    }
+
+    .estrellas label {
+      font-size: 40px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .estrellas label:hover,
+    .estrellas label:hover ~ label {
+      color: gold;
+    }
+
+    .estrellas input:checked ~ label {
+      color: gold;
+    }
+
+    .favorito {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      margin-left: 7px;
+    }
+
+    .corazon {
+      font-size: 26px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .corazon:hover {
+      transform: scale(1.1);
+    }
+
+    .texto-fav {
+      font-size: 15px;
+      color: #a12d2d;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <article class="movie-card">
+    <div class="poster">
+      <img src="img/madc.jpg" alt="Más Allá del Cielo">
+    </div>
+
+    <div class="details">
+      <h2 class="title">Más Allá del Cielo</h2>
+
+      <div class="meta">
+        <span>2010</span>
+        <span>1h 40min</span>
+        <span>Romance / Fantasía</span>
+      </div>
+
+      <p class="synopsis">
+        Es el título en español para Hispanoamérica de la película dramática y romántica Charlie St. Cloud (2010), en la que el joven Charlie sobrevive a un accidente automovilístico trágico donde muere su hermano menor, Sam. A raíz de esto, Charlie adquiere la habilidad sobrenatural de ver y comunicarse con el espíritu de su hermano y otros difuntos, lo que lo ata a su pasado y a una promesa hecha a Sam. Sin embargo, su mundo cambia cuando una antigua compañera de clases, Tess, regresa a casa inesperadamente y Charlie se enfrenta a la difícil decisión de honrar su promesa al espíritu de su hermano o atreverse a seguir adelante y vivir su propia vida con un nuevo amor.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-trailer" href="https://www.youtube.com/watch?v=14idGebUFMA" target="_blank">Ver tráiler</a>
+        <a class="btn btn-watch" href="https://tv.apple.com/ar/movie/mas-alla-del-cielo/umc.cmc.4fb7mjo3wdthywqh5gy3th841?action=play" target="_blank">Ver película</a>
+        <a class="btn btn-inicio" href="llorar.html">Volver</a>
+      </div>
+
+      <div class="estrellas">
+        <input type="radio" id="estrella5" name="valoracion" value="5">
+        <label for="estrella5">★</label>
+
+        <input type="radio" id="estrella4" name="valoracion" value="4">
+        <label for="estrella4">★</label>
+
+        <input type="radio" id="estrella3" name="valoracion" value="3">
+        <label for="estrella3">★</label>
+
+        <input type="radio" id="estrella2" name="valoracion" value="2">
+        <label for="estrella2">★</label>
+
+        <input type="radio" id="estrella1" name="valoracion" value="1">
+        <label for="estrella1">★</label>
+      </div>
+
+      <div class="favorito">
+        <span class="corazon"
+      data-nombre="Mas alla del cielo"
+      data-enlace="masalla.html"
+      data-imagen="img/madc.jpg"
+      onclick="toggleFavorito(this)">♡</span>
+        <span class="texto-fav">Agregar a mis favoritos</span>
+      </div>
+
+
+      <div class="botones">
+        <a class="btn btn-inicio" href="favoritos.html">Ir a Mis Favoritos</a>
+        <a class="btn btn-inicio" href="index.html">Volver al Inicio</a>
+      </div>
+    </div>
+    <script>
+      function toggleFavorito(elemento) {
+        const nombre = elemento.dataset.nombre;
+        const enlace = elemento.dataset.enlace;
+        const imagen = elemento.dataset.imagen;
+        const texto = elemento.nextElementSibling;
+
+        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        const index = favoritos.findIndex(f => f.nombre === nombre);
+
+        if (index === -1) {
+          favoritos.push({ nombre, enlace, imagen: 'img/madc.jpg' });
+          localStorage.setItem('favoritos', JSON.stringify(favoritos));
+          elemento.textContent = '❤️';
+          texto.textContent = 'En favoritos';
+        } else {
+          favoritos.splice(index, 1);
+          localStorage.setItem('favoritos', JSON.stringify(favoritos));
+          elemento.textContent = '♡';
+          texto.textContent = 'Agregar a mis favoritos';
+        }
+      }
+
+
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.favorito').forEach(div => {
+          const corazon = div.querySelector('.corazon');
+          const texto = div.querySelector('.texto-fav');
+          const nombre = corazon.dataset.nombre;
+
+          if (!nombre || !texto) return;
+
+          const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+          const esta = favoritos.some(f => f.nombre === nombre);
+
+          if (esta) {
+            corazon.textContent = '❤️';
+            texto.textContent = 'En favoritos';
+          } else {
+            corazon.textContent = '♡';
+            texto.textContent = 'Agregar a mis favoritos';
+          }
+        });
+      });
+    </script>
+    </div>
+  </article>
+
+</body>
+</html>

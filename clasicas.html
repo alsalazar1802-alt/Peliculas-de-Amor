@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clásicos del Romance</title>
+  <style>
+
+    body {
+      font-family: 'Georgia', serif;
+      background:pink;
+      margin: 0;
+      padding: 10px 20px;
+      text-align: center;
+      color: #6b1c1c;
+    }
+
+    @font-face {
+      font-family: 'valentin';
+      src: url('fonts/valentin.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'martin';
+      src: url('fonts/martin.otf') format('truetype');
+    }
+
+    h1 {
+      font-size: 90px;
+      color: #b02e2e;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      font-family: 'valentin';
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 10px;
+      color: #6b1c1c;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      font-family: 'martin';
+    }
+
+    a:hover {
+      color: #b02e2e;
+    }
+
+    .volver {
+      display: inline-block;
+      margin: 10px 0 30px;
+      font-size: 18px;
+      background-color: #f9d5d5;
+      padding: 8px 18px;
+      border-radius: 25px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 35px;
+      padding: 20px;
+    }
+
+    .peli {
+      background-color: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .peli:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+    }
+
+    .peli img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .nombre {
+      padding: 10px;
+      font-weight: bold;
+      color: #a12d2d;
+      font-size: 18px;
+      font-family: 'martin';
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Clásicos del Romance </h1>
+
+  <a href="index.html" class="volver">Volver al inicio</a>
+
+  <div class="galeria">
+    <div class="peli">
+      <a href="titanic.html">
+        <img src="img/tn.jpg" alt="Titanic">
+      </a>
+      <div class="nombre">Titanic</div>
+    </div>
+    <div class="peli">
+      <a href="dia.html">
+        <img src="img/semd.jpg" alt="Siempre el mismo día">
+      </a>
+      <div class="nombre">Siempre el mismo día</div>
+    </div>
+    <div class="peli">
+      <a href="perder.html">
+        <img src="img/cpaucedd.jpg" alt="Cómo perder a un hombre en 10 días">
+      </a>
+      <div class="nombre">Cómo perder a un hombre en 10 días</div>
+    </div>
+    <div class="peli">
+      <a href="mujer.html">
+        <img src="img/mb.jpg" alt="Mujer Bonita">
+      </a>
+      <div class="nombre">Mujer Bonita</div>
+    </div>
+    <div class="peli">
+      <a href="vestidos.html">
+        <img src="img/27v.jpg" alt="27 Vestidos">
+      </a>
+      <div class="nombre">27 Vestidos</div>
+    </div>
+    <div class="peli">
+      <a href="notting.html">
+        <img src="img/ullnh.jpg" alt="Un Lugar Llamado Notting Hill">
+      </a>
+      <div class="nombre">Un Lugar Llamado Notting Hill</div>
+    </div>
+    <div class="peli">
+      <a href="resplandor.html">
+        <img src="img/er.jpg" alt="Eterno resplandor de una mente sin recuerdos">
+      </a>
+      <div class="nombre">Eterno resplandor de una mente sin recuerdos</div>
+    </div>
+    <div class="peli">
+      <a href="orgullo.html">
+        <img src="img/oyp.jpg" alt="Orgullo y Prejuicio">
+      </a>
+      <div class="nombre">Orgullo y Prejuicio</div>
+    </div>
+    <div class="peli">
+      <a href="diario.html">
+        <img src="img/ddup.jpg" alt="Diario de una pasión">
+      </a>
+      <div class="nombre">Diario de una pasión</div>
+    </div>
+    <div class="peli">
+      <a href="amores.html">
+        <img src="img/aeyub.jpg" alt="Amores, enredos y una boda">
+      </a>
+      <div class="nombre">Amores, enredos y una boda</div>
+    </div>
+  </div>
+
+</body>
+</html>

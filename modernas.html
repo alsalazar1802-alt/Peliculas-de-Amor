@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Romances Modernos</title>
+  <style>
+  body {
+    font-family: 'Georgia', serif;
+    background:pink;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    color: #6b1c1c;
+  }
+
+  @font-face {
+    font-family: 'valentin';
+    src: url('fonts/valentin.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'martin';
+    src: url('fonts/martin.otf') format('truetype');
+  }
+
+  h1 {
+    font-size: 90px;
+    color: #b02e2e;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: 'valentin';
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 10px;
+    color: #6b1c1c;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'martin';
+  }
+
+  a:hover {
+    color: #b02e2e;
+  }
+
+  .volver {
+    display: inline-block;
+    margin: 10px 0 30px;
+    font-size: 18px;
+    background-color: #f9d5d5;
+    padding: 8px 18px;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+    padding: 20px;
+  }
+
+  .peli {
+    background-color: #fff0f5;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .peli:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+  }
+
+  .peli img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .nombre {
+    padding: 10px;
+    font-weight: bold;
+    color: #a12d2d;
+    font-size: 18px;
+    font-family: 'martin';
+  }
+  </style>
+</head>
+<body>
+
+  <h1>Romances Modernos</h1>
+
+  <a href="index.html" class="volver">Volver al inicio</a>
+
+  <div class="galeria">
+    <div class="peli">
+      <a href="primer.html">
+        <img src="img/mpa.jpg" alt="Mi primer amor">
+      </a>
+      <div class="nombre">Mi primer amor</div>
+    </div>
+    <div class="peli">
+      <a href="invisible.html">
+        <img src="img/lvdsi.jpg" alt="Las ventajas de ser invisible">
+      </a>
+      <div class="nombre">Las ventajas de ser invisible</div>
+    </div>
+    <div class="peli">
+      <a href="todos.html">
+        <img src="img/atlcdlqme.jpg" alt="A todos los chicos de los que me enamore">
+      </a>
+      <div class="nombre">A todos los chicos de los que me enamore</div>
+    </div>
+    <div class="peli">
+      <a href="cielo.html">
+        <img src="img/atmsec.jpg" alt="Tres metros sobre el cielo">
+      </a>
+      <div class="nombre">Tres metros sobre el cielo</div>
+    </div>
+    <div class="peli">
+      <a href="verano.html">
+        <img src="img/ddv.jpg" alt="500 días con ella">
+      </a>
+      <div class="nombre">500 días con ella</div>
+    </div>
+  </div>
+  <div class="galeria">
+    <div class="peli">
+      <a href="estadistica.html">
+        <img src="img/lpedapv.jpg" alt="La probabilidad estadistica del amor a primera vista">
+      </a>
+      <div class="nombre">La probabilidad estadistica del amor a primera vista</div>
+    </div>
+    <div class="peli">
+      <a href="idea.html">
+        <img src="img/lidt.jpg" alt="La idea de ti">
+      </a>
+      <div class="nombre">La idea de ti</div>
+    </div>
+    <div class="peli">
+      <a href="lalaland.html">
+        <img src="img/lll.jpg" alt="La La Land">
+      </a>
+      <div class="nombre">La La Land</div>
+    </div>
+    <div class="peli">
+      <a href="cuestion.html">
+        <img src="img/ucdt.jpg" alt="Una cuestion de tiempo">
+      </a>
+      <div class="nombre">Una cuestion de tiempo</div>
+    </div>
+    <div class="peli">
+      <a href="vayas.html">
+        <img src="img/adqtv.jpg" alt="Antes de que te vayas">
+      </a>
+      <div class="nombre">Antes de que te vayas</div>
+    </div>
+  </div>
+
+</body>
+</html>

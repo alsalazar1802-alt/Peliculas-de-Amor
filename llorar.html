@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dramas Romanticos</title>
+  <style>
+  body {
+    font-family: 'Georgia', serif;
+    background:pink;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    color: #6b1c1c;
+  }
+
+  @font-face {
+    font-family: 'valentin';
+    src: url('fonts/valentin.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'martin';
+    src: url('fonts/martin.otf') format('truetype');
+  }
+
+  h1 {
+    font-size: 90px;
+    color: #b02e2e;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: 'valentin';
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 10px;
+    color: #6b1c1c;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'martin';
+  }
+
+  a:hover {
+    color: #b02e2e;
+  }
+
+  .volver {
+    display: inline-block;
+    margin: 10px 0 30px;
+    font-size: 18px;
+    background-color: #f9d5d5;
+    padding: 8px 18px;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+    padding: 20px;
+  }
+
+  .peli {
+    background-color: #fff0f5;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .peli:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+  }
+
+  .peli img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .nombre {
+    padding: 10px;
+    font-weight: bold;
+    color: #a12d2d;
+    font-size: 18px;
+    font-family: 'martin';
+  }
+  </style>
+</head>
+<body>
+
+  <h1>Dramas Romanticos</h1>
+
+  <a href="index.html" class="volver">Volver al inicio</a>
+
+  <div class="galeria">
+    <div class="peli">
+      <a href="recuerdame.html">
+        <img src="img/rc.jpg" alt="Recuerdame">
+      </a>
+      <div class="nombre">Recuerdame</div>
+    </div>
+    <div class="peli">
+      <a href="paseo.html">
+        <img src="img/uppr.jpg" alt="Un paseo para recordar">
+      </a>
+      <div class="nombre">Un paseo para recordar</div>
+    </div>
+    <div class="peli">
+      <a href="violet.html">
+        <img src="img/vyf.jpg" alt="Violet y Finch">
+      </a>
+      <div class="nombre">Violet y Finch</div>
+    </div>
+    <div class="peli">
+      <a href="medianoche.html">
+        <img src="img/adm.jpg" alt="Amor de media noche">
+      </a>
+      <div class="nombre">Amor de media noche</div>
+    </div>
+    <div class="peli">
+      <a href="masalla.html">
+        <img src="img/madc.jpg" alt="Mas alla del cielo">
+      </a>
+      <div class="nombre">Mas alla del cielo</div>
+    </div>
+  </div>
+  <div class="galeria">
+    <div class="peli">
+      <a href="dosmetros.html">
+        <img src="img/admdt.jpg" alt="A dos metros de ti">
+      </a>
+      <div class="nombre">A dos metros de ti</div>
+    </div>
+    <div class="peli">
+      <a href="vida.html">
+        <img src="img/ptlv.jpg" alt="Para toda la vida">
+      </a>
+      <div class="nombre">Para toda la vida</div>
+    </div>
+    <div class="peli">
+      <a href="nacidoe.html">
+        <img src="img/hnue.jpg" alt="Nace una estrella">
+      </a>
+      <div class="nombre">Nace una estrella</div>
+    </div>
+    <div class="peli">
+      <a href="antesdeti.html">
+        <img src="img/yadt.jpg" alt="Yo antes de ti">
+      </a>
+      <div class="nombre">Yo antes de ti</div>
+    </div>
+    <div class="peli">
+      <a href="estrella.html">
+        <img src="img/blme.jpg" alt="Bajo la misma estrella">
+      </a>
+      <div class="nombre">Bajo la misma estrella</div>
+    </div>
+  </div>
+
+</body>
+</html>

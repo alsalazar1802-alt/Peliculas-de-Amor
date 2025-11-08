@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Favoritos</title>
+  <style>
+    body {
+      background-color: #fff5f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #a12d2d;
+      margin: 30px 0;
+    }
+
+    .favoritos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .fav-card {
+      background-color: #ffecec;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      width: 200px;
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .fav-card:hover {
+      transform: scale(1.05);
+    }
+
+    .fav-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .fav-card h3 {
+      color: #a12d2d;
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .fav-card a {
+      display: inline-block;
+      margin-top: 5px;
+      text-decoration: none;
+      color: white;
+      background-color: #a12d2d;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .fav-card a:hover {
+      background-color: #721e1e;
+    }
+
+    .volver {
+      display: inline-block;
+      margin: 25px 0;
+      font-size: 15px;
+      background-color: #f9d5d5;
+      padding: 8px 18px;
+      border-radius: 25px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+      color: #a12d2d;
+    }
+
+    .volver:hover {
+      background-color: #f2b9b9;
+    }
+
+    @font-face {
+      font-family: 'valentin';
+      src: url('fonts/valentin.ttf') format('truetype');
+    }
+
+    h1 {
+      font-size: 6em;
+      margin-bottom: 0em;
+      font-family: 'valentin';
+    }
+  </style>
+</head>
+<body>
+  <h1>Mis Películas Favoritas</h1>
+  <div class="favoritos-container" id="listaFavoritos"></div>
+
+  <a href="index.html" class="volver">Volver al inicio</a>
+
+  <script>
+    const contenedor = document.getElementById('listaFavoritos');
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+    if (favoritos.length === 0) {
+      contenedor.innerHTML = "<p>No tenés películas en favoritos todavía... </p>";
+    } else {
+      favoritos.forEach(fav => {
+        const card = document.createElement('div');
+        card.classList.add('fav-card');
+
+        card.innerHTML = `
+          <img src="${fav.imagen}" alt="${fav.nombre}">
+          <h3>${fav.nombre}</h3>
+          <a href="${fav.enlace}">Ver más</a>
+        `;
+
+        contenedor.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
